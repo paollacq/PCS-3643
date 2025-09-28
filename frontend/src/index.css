@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Library Management System - Design System */
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 251 100% 99%;
+    --foreground: 226 24% 12%;
+
+    /* Cards and surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 226 24% 12%;
+    --card-glow: 0 0% 100%;
+
+    /* Interactive elements */
+    --primary: 262 75% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 262 75% 68%;
+    --primary-light: 262 75% 95%;
+
+    /* Secondary colors - warm purple */  
+    --secondary: 320 15% 94%;
+    --secondary-foreground: 226 24% 12%;
+
+    /* Accent - golden highlight */
+    --accent: 45 93% 58%;
+    --accent-foreground: 226 24% 12%;
+    --accent-glow: 45 93% 78%;
+
+    /* Muted colors */
+    --muted: 264 8% 96%;
+    --muted-foreground: 226 12% 45%;
+
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+
+    /* Form elements */
+    --border: 264 15% 88%;
+    --input: 264 15% 92%;
+    --ring: 262 75% 58%;
+
+    /* Design tokens */
+    --radius: 0.75rem;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-card: linear-gradient(to bottom right, hsl(var(--card)), hsl(var(--muted)));
+    --gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -8px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 8px 32px -12px hsl(var(--primary) / 0.25);
+    --shadow-card: 0 2px 16px -4px hsl(226 24% 12% / 0.08);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Base colors */
+    --background: 226 24% 8%;
+    --foreground: 0 0% 98%;
+
+    /* Cards and surfaces */
+    --card: 226 24% 10%;
+    --card-foreground: 0 0% 98%;
+    --card-glow: 226 24% 12%;
+
+    /* Interactive elements */
+    --primary: 262 75% 68%;
+    --primary-foreground: 226 24% 8%;
+    --primary-glow: 262 75% 78%;
+    --primary-light: 262 75% 15%;
+
+    /* Secondary colors */
+    --secondary: 226 20% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Accent colors */
+    --accent: 45 93% 68%;
+    --accent-foreground: 226 24% 8%;
+    --accent-glow: 45 93% 78%;
+
+    /* Muted colors */
+    --muted: 226 20% 12%;
+    --muted-foreground: 226 12% 65%;
+
+    /* Status colors */
+    --destructive: 0 84% 70%;
+    --destructive-foreground: 226 24% 8%;
+    --success: 142 71% 55%;
+    --warning: 38 92% 60%;
+
+    /* Form elements */
+    --border: 226 20% 18%;
+    --input: 226 20% 15%;
+    --ring: 262 75% 68%;
+
+    /* Gradients remain the same as they use CSS variables */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-surface);
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+}
